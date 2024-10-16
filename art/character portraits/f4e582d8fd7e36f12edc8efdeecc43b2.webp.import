@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkya0iy4ghwl3"
-path="res://.godot/imported/cat in box.png-6a7de804d01479588fced4aa673e663f.ctex"
+uid="uid://bcfajpaby8igv"
+path="res://.godot/imported/f4e582d8fd7e36f12edc8efdeecc43b2.webp-c5b1ed845e57c411d54b85bbc400d777.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/cat in box.png"
-dest_files=["res://.godot/imported/cat in box.png-6a7de804d01479588fced4aa673e663f.ctex"]
+source_file="res://art/character portraits/f4e582d8fd7e36f12edc8efdeecc43b2.webp"
+dest_files=["res://.godot/imported/f4e582d8fd7e36f12edc8efdeecc43b2.webp-c5b1ed845e57c411d54b85bbc400d777.ctex"]
 
 [params]
 

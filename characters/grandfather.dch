@@ -17,7 +17,7 @@
 "portraits": {
 "New portrait": {
 "export_overrides": {
-"image": "\"res://art/grandfather.png\""
+"image": "\"res://art/character portraits/grandfather.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

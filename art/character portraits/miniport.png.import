@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcfajpaby8igv"
-path="res://.godot/imported/f4e582d8fd7e36f12edc8efdeecc43b2.webp-19fbb782dbde02dc2c2319d10052c0b0.ctex"
+uid="uid://bb1ng5fvfe07x"
+path="res://.godot/imported/miniport.png-52eaaff1d3ab80276740d589c79de040.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/f4e582d8fd7e36f12edc8efdeecc43b2.webp"
-dest_files=["res://.godot/imported/f4e582d8fd7e36f12edc8efdeecc43b2.webp-19fbb782dbde02dc2c2319d10052c0b0.ctex"]
+source_file="res://art/character portraits/miniport.png"
+dest_files=["res://.godot/imported/miniport.png-52eaaff1d3ab80276740d589c79de040.ctex"]
 
 [params]
 
