@@ -1,0 +1,34 @@
+[music path="res://sounds/rain-sound-188158.mp3" fade="0.0" volume="-12.0" loop="false"]
+Cloner: Hi there!
+Cloner: I made this game just out of curiosity
+Cloner: dunno if this is enjoyable or so, hope you would like it
+[music path="res://sounds/ForestWalk-320bit(chosic.com).mp3" fade="0.0" volume="0.0"]
+This is a story about silly cat
+Once upon a time, in a far far galaxy away
+galaxy, where cats can speek both human and cat languages, obviously
+[wait time="2.0"]
+grandfather: Wow, my dear! See, who's there!
+grandmother: Oh no! What a cruel creature left here a silly little cat! Under the rain! We must do something!
+cat: meow
+grandfather: Let's take her to our home then. She's in dire need of some care and rest.
+[background arg="res://art/balck_bg.png" fade="0.0"]
+and so - couple adopted the cat
+year have passed
+and little cat became fullgrown discord kitt...
+Cloner: khm khm...  I mean - helpfull child of a couple
+they raised her as a their own child, teached her a human language and helped her in any way possible
+[background arg="res://art/Restaurants and Cafes/Coffee 2.png" fade="1.0" transition="Simple Fade"]
+Mini: Another day - another way!
+Mini: And im on my way to do great things !
+grandmother: Yes kitten, you are
+Mini: huh? Do you have something for me?
+grandfather: Yes. From now on - you in charge of our little coffee shop.
+grandmother: We think, that you can accomplish many great things here and there
+Mini: But i am a cat! Cats have paws, they cant serve drinks!
+grandfather: NOTED
+grandmother: You always was a cat, who can acomplish anything in this world. Small coffe shop will not serve you any problems.
+grandfather: Just follow the tutorial, and you can do anything
+Mini: But this is a test demo, not the full made game, there is no tutorials
+Cloner: yep, sorry
+grandmother: so - do as you heart desires. maybe this is only time in your life, where you gaming skill will help you do something
+[signal arg="intro_ends"]
