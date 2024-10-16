@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dms2328x1qrci"]
+
+[ext_resource type="Texture2D" uid="uid://cne8gp7jtvtiq" path="res://art/Neko Cafe Asset Pack/neko-cafe-furnitures.png" id="1_fqf8v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_02qcg"]
+radius = 5.0
+
+[node name="CoffeMachine" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fqf8v")
+hframes = 12
+vframes = 10
+frame = 56
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_02qcg")

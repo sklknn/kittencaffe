@@ -28,7 +28,9 @@ var direction = Vector2(0,0)
 func _ready() -> void:
 	cat_type = randi_range(black,waiter)
 	cat_anim()
-
+	$Thinking.visible = false
+	$Timer.start(randf_range(3,8))
+	$Thinking/Food.frame = randi_range(0,5)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -107,3 +109,8 @@ func cat_anim():
 			$Sprite2D.texture = waiter_front
 			$AnimationPlayer.play("walk")
 			$Sprite2D.flip_h = false
+
+
+func _on_timer_timeout() -> void:
+	$Thinking.visible = true
+	$Thinking/AnimationPlayer.play("idle")

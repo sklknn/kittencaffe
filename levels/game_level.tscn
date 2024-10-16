@@ -1,10 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://15nvo0g3wtma"]
+[gd_scene load_steps=25 format=3 uid="uid://15nvo0g3wtma"]
 
 [ext_resource type="Script" path="res://levels/game_level.gd" id="1_h84le"]
 [ext_resource type="PackedScene" uid="uid://cna6urttaj70c" path="res://characters/miniko.tscn" id="1_ij4nx"]
 [ext_resource type="Texture2D" uid="uid://beivdcw1pd7ra" path="res://art/Neko Cafe Asset Pack/neko-cafe-tilemap.png" id="2_d6owc"]
 [ext_resource type="Texture2D" uid="uid://cne8gp7jtvtiq" path="res://art/Neko Cafe Asset Pack/neko-cafe-furnitures.png" id="3_ttb0b"]
-[ext_resource type="PackedScene" uid="uid://wntboytroe3d" path="res://items/choco_cake.tscn" id="5_wa5y3"]
 [ext_resource type="PackedScene" uid="uid://o13wdchjiu7e" path="res://interactions/interaction area/interaction_area.tscn" id="6_vsiqh"]
 [ext_resource type="AudioStream" uid="uid://cn1chunvlm8v3" path="res://sounds/music/Fresh-Air(chosic.com).mp3" id="7_dsd5w"]
 [ext_resource type="AudioStream" uid="uid://dagac5n6paw0b" path="res://sounds/music/Morning-Sun(chosic.com).mp3" id="8_tav67"]
@@ -15,6 +14,9 @@
 [ext_resource type="Script" path="res://levels/jucke_box.gd" id="13_dw11e"]
 [ext_resource type="Texture2D" uid="uid://v3w3fjkpqq0a" path="res://art/jucke.png" id="14_esfr7"]
 [ext_resource type="PackedScene" uid="uid://dsi1y0lwmq1ma" path="res://characters/customer.tscn" id="15_5q8gd"]
+[ext_resource type="PackedScene" uid="uid://dms2328x1qrci" path="res://items/coffe_machine.tscn" id="15_e5p36"]
+[ext_resource type="Script" path="res://items/coffe_machine.gd" id="16_kuu5t"]
+[ext_resource type="AudioStream" uid="uid://bp13hnd3e5wv7" path="res://sounds/automated-coffee-maker-machine-raw-30771.mp3" id="17_yxrlu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5mwyd"]
 texture = ExtResource("2_d6owc")
@@ -213,9 +215,6 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5mwyd")
 sources/1 = SubResource("TileSetAtlasSource_mfl5a")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qqfy"]
-size = Vector2(13, 38)
-
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_g2lfs"]
 shuffle = true
 stream_count = 6
@@ -231,6 +230,9 @@ size = Vector2(42, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmpnw"]
 size = Vector2(17, 22)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jbwy8"]
+radius = 19.0
 
 [node name="GameLevel" type="Node2D"]
 script = ExtResource("1_h84le")
@@ -256,21 +258,11 @@ layer_1/name = "Furniture"
 layer_1/z_index = -5
 layer_1/tile_data = PackedInt32Array(196623, 327681, 7, 262159, 327681, 7, 327695, 327681, 7, 393231, 327681, 8, 393232, 393217, 8, 393233, 393217, 8, 393234, 393217, 8, 393235, 393217, 8, 393236, 393217, 8, 393237, 393217, 8, 393238, 393217, 8, 393239, 524289, 8, 327703, 524289, 7, 196631, 327681, 805306375, 196625, 65537, 2, 196626, 131073, 2, 131089, 65537, 1, 131090, 131073, 1, 131091, 196609, 1, 196627, 196609, 2, 131092, 262145, 1, 196628, 262145, 2, 131093, 327681, 1, 196629, 327681, 2, 131094, 393217, 1, 196630, 393217, 2, 65560, 458753, 1, 131096, 458753, 2, 65561, 524289, 1, 131097, 524289, 2, 65551, 589825, 1, 131087, 589825, 2, 65552, 655361, 1, 65562, 589825, 1, 131098, 589825, 2, 65563, 655361, 1, 131099, 655361, 2, 589840, 196609, 4, 655376, 196609, 5, 589841, 262145, 4, 655377, 262145, 5, 589845, 196609, 4, 655381, 196609, 5, 589846, 262145, 4, 655382, 262145, 5, 589850, 196609, 4, 655386, 196609, 5, 589851, 262145, 4, 655387, 262145, 5, 720912, 327681, 5, 720913, 327681, 5, 720917, 327681, 5, 720918, 327681, 5, 720922, 327681, 5, 720923, 327681, 5, 524314, 327681, 5, 524315, 327681, 5, 524309, 327681, 5, 524310, 327681, 5, 524304, 327681, 5, 524305, 327681, 5, 131088, 655361, 2, 327696, 393217, 7, 327697, 393217, 7, 327698, 393217, 7, 327699, 393217, 7, 327700, 393217, 7, 327701, 393217, 7, 327702, 393217, 7)
 layer_2/name = "Misc"
-layer_2/tile_data = PackedInt32Array(262159, 524289, 4, 327703, 393217, 5, 65556, 589825, 1, 131092, 589825, 2, 65557, 655361, 1, 131093, 655361, 2)
-
-[node name="ChocoCake" parent="." instance=ExtResource("5_wa5y3")]
-position = Vector2(347, 44)
-food_type = 2
-
-[node name="InteractionArea" parent="ChocoCake" instance=ExtResource("6_vsiqh")]
-action_name = "pick up"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ChocoCake/InteractionArea"]
-position = Vector2(-0.5, 9)
-shape = SubResource("RectangleShape2D_7qqfy")
+layer_2/tile_data = PackedInt32Array(327703, 393217, 5, 65556, 589825, 1, 131092, 589825, 2, 65557, 655361, 1, 131093, 655361, 2)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamPlaylist_g2lfs")
+bus = &"Music"
 
 [node name="JuckeBox" type="StaticBody2D" parent="."]
 z_index = -5
@@ -294,14 +286,35 @@ shape = SubResource("RectangleShape2D_duf18")
 position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_bmpnw")
 
-[node name="Customer" parent="." instance=ExtResource("15_5q8gd")]
+[node name="Customers" type="Node2D" parent="."]
+
+[node name="Customer" parent="Customers" instance=ExtResource("15_5q8gd")]
 position = Vector2(398, 128)
 speed = 10
 
-[node name="Customer2" parent="." instance=ExtResource("15_5q8gd")]
+[node name="Customer2" parent="Customers" instance=ExtResource("15_5q8gd")]
 position = Vector2(243, 140)
 speed = 10
 
-[node name="Customer3" parent="." instance=ExtResource("15_5q8gd")]
+[node name="Customer3" parent="Customers" instance=ExtResource("15_5q8gd")]
 position = Vector2(311, 166)
 speed = 10
+
+[node name="CoffeMachine" parent="." instance=ExtResource("15_e5p36")]
+position = Vector2(248, 71)
+script = ExtResource("16_kuu5t")
+
+[node name="InteractionArea" parent="CoffeMachine" instance=ExtResource("6_vsiqh")]
+action_name = "make some coffee"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoffeMachine/InteractionArea"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_jbwy8")
+
+[node name="Timer" type="Timer" parent="CoffeMachine"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CoffeMachine"]
+stream = ExtResource("17_yxrlu")
+bus = &"SFX"
+
+[connection signal="timeout" from="CoffeMachine/Timer" to="CoffeMachine" method="_on_timer_timeout"]

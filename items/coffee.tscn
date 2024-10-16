@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://ehvj2oahwwvg"]
+
+[ext_resource type="Script" path="res://items/coffee.gd" id="1_lhy8a"]
+[ext_resource type="Texture2D" uid="uid://dtnsmi67mvhik" path="res://art/Neko Cafe Asset Pack/neko-cafe-food.png" id="1_uwa3v"]
+[ext_resource type="PackedScene" uid="uid://o13wdchjiu7e" path="res://interactions/interaction area/interaction_area.tscn" id="2_1ijdi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sf3gq"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_32d1t"]
+radius = 18.0
+
+[node name="Coffee" type="StaticBody2D"]
+script = ExtResource("1_lhy8a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uwa3v")
+hframes = 3
+vframes = 2
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sf3gq")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_1ijdi")]
+action_name = "take coffee"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_32d1t")
