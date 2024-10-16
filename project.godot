@@ -30,11 +30,11 @@ ProjectUISoundController="*res://addons/maaacks_menus_template/base/scenes/autol
 [dialogic]
 
 directories/dch_directory={
-"Cloner": "res://timelines/Cloner.dch",
-"Mini": "res://art/Mini.dch",
-"cat": "res://art/cat.dch",
+"Cloner": "res://characters/Cloner.dch",
+"Mini": "res://characters/Mini.dch",
+"cat": "res://characters/cat.dch",
 "grandfather": "res://characters/grandfather.dch",
-"grandmother": "res://sounds/grandmother.dch"
+"grandmother": "res://characters/grandmother.dch"
 }
 directories/dtl_directory={
 "ingame": "res://timelines/ingame.dtl",

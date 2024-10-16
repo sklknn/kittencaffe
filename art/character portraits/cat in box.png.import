@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6j4xfllckwbw"
-path="res://.godot/imported/grandma.png-ed76f9a6d02dcfb2daf90fb250e33d0e.ctex"
+uid="uid://bkya0iy4ghwl3"
+path="res://.godot/imported/cat in box.png-18d7edbd30234dab7cc6ca4ab431b69a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/grandma.png"
-dest_files=["res://.godot/imported/grandma.png-ed76f9a6d02dcfb2daf90fb250e33d0e.ctex"]
+source_file="res://art/character portraits/cat in box.png"
+dest_files=["res://.godot/imported/cat in box.png-18d7edbd30234dab7cc6ca4ab431b69a.ctex"]
 
 [params]
 

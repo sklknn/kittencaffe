@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb1ng5fvfe07x"
-path="res://.godot/imported/miniport.png-f16e43518a86a9394c7446c08b90d44f.ctex"
+uid="uid://c6j4xfllckwbw"
+path="res://.godot/imported/grandma.png-44863a5d298519dc97b1dd0828f810eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/miniport.png"
-dest_files=["res://.godot/imported/miniport.png-f16e43518a86a9394c7446c08b90d44f.ctex"]
+source_file="res://art/character portraits/grandma.png"
+dest_files=["res://.godot/imported/grandma.png-44863a5d298519dc97b1dd0828f810eb.ctex"]
 
 [params]
 
