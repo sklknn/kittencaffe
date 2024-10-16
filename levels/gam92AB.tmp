@@ -296,12 +296,15 @@ shape = SubResource("RectangleShape2D_bmpnw")
 
 [node name="Customer" parent="." instance=ExtResource("15_5q8gd")]
 position = Vector2(398, 128)
-speed = 10
+move_cooldown = 5
+move_time = 5
 
 [node name="Customer2" parent="." instance=ExtResource("15_5q8gd")]
 position = Vector2(243, 140)
-speed = 10
+move_cooldown = 5
+move_time = 5
 
 [node name="Customer3" parent="." instance=ExtResource("15_5q8gd")]
 position = Vector2(311, 166)
-speed = 10
+move_cooldown = 5
+move_time = 5

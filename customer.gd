@@ -17,7 +17,9 @@ enum {black,orange,waiter}
 
 var cat_type
 
-var move_cooldown = 10
+@export var move_cooldown = 5
+@export var move_time = 5
+var movement_cooldown = move_cooldown + move_time
 
 @export var speed = 10
 var direction = Vector2(0,0)
@@ -30,16 +32,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-
-	move_cooldown -= delta
-	if move_cooldown >= 5 :
+	cat_anim()
+	movement_cooldown -= delta
+	if movement_cooldown >= move_time :
 		velocity = direction * speed
 		move_and_slide()
-		cat_anim()
 		
-	if move_cooldown <= 0 :
+		
+	if movement_cooldown <= 0 :
 		direction = Vector2(randi_range(-1,1),randi_range(-1,1))
-		move_cooldown = 10
+		movement_cooldown = move_cooldown + move_time
 
 func cat_anim():
 	if cat_type == black:

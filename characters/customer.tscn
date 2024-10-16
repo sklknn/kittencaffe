@@ -63,6 +63,7 @@ _data = {
 radius = 5.0
 
 [node name="Customer" type="CharacterBody2D"]
+z_index = -1
 script = ExtResource("1_c0ykx")
 speed = 100
 
@@ -78,6 +79,3 @@ libraries = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0au0f")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
