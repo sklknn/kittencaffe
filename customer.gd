@@ -30,13 +30,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
-	if move_cooldown >=5 :
+
+	move_cooldown -= delta
+	if move_cooldown >= 5 :
 		velocity = direction * speed
 		move_and_slide()
 		cat_anim()
-		move_cooldown -= delta
-	if move_cooldown < 0 :
+		
+	if move_cooldown <= 0 :
 		direction = Vector2(randi_range(-1,1),randi_range(-1,1))
 		move_cooldown = 10
 
