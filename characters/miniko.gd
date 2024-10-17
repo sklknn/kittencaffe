@@ -32,6 +32,13 @@ func _physics_process(_delta: float):
 	
 	pick_new_state()
 	
+	$"../Node2D/1".text= str(item_cokocake)
+	$"../Node2D/2".text= str(item_coffe)
+	$"../Node2D/3".text = str(item_shit)
+	$"../Node2D/4".text = str(item_berrycake)
+	$"../Node2D/5".text = str(item_quasant)
+	$"../Node2D/6".text = str(item_toast)
+	
 func update_animation_parameters(move_input: Vector2):
 	if(move_input != Vector2.ZERO):
 		animation_tree.set("parameters/idle/blend_position",move_input.x)
