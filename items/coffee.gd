@@ -2,7 +2,7 @@ extends StaticBody2D
 
 @onready var interaction_area: InteractionArea = $InteractionArea
 
-signal take_coffe
+signal take_cake
 
 var food_type = 1
 
@@ -16,4 +16,4 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_interact():
-	emit_signal("take_coffe")
+	emit_signal("take_cake")

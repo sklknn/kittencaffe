@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://dmgy7t5othldr"]
+
+[ext_resource type="Script" path="res://scenes/minigames/cokocake_minigame.gd" id="1_4p3iq"]
+[ext_resource type="Texture2D" uid="uid://b0gu31dkyfuhv" path="res://art/arrows.png" id="1_yt012"]
+[ext_resource type="FontFile" uid="uid://dj7h3m0e82ewb" path="res://art/m5x7.ttf" id="2_i1qp1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxodj"]
+atlas = ExtResource("1_yt012")
+region = Rect2(52.7106, 120.551, 237.184, 122.984)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adih4"]
+size = Vector2(187.125, 399.75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_loglt"]
+atlas = ExtResource("1_yt012")
+region = Rect2(46.8542, 245, 243.041, 118.592)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlffl"]
+atlas = ExtResource("1_yt012")
+region = Rect2(43.926, 122.015, 244.505, 247.433)
+
+[node name="cokocake_minigame" type="Node2D"]
+script = ExtResource("1_4p3iq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture_filter = 1
+position = Vector2(242.042, 6.625)
+scale = Vector2(0.387295, 0.387295)
+texture = SubResource("AtlasTexture_xxodj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-149.563, 26)
+shape = SubResource("RectangleShape2D_adih4")
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(146, 28)
+shape = SubResource("RectangleShape2D_adih4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
+texture_filter = 1
+position = Vector2(-229.95, 12.375)
+scale = Vector2(0.379237, 0.379237)
+texture = SubResource("AtlasTexture_loglt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6.82121e-13, 11)
+scale = Vector2(0.112705, 0.112705)
+texture = SubResource("AtlasTexture_rlffl")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -131.0
+offset_top = -94.0
+offset_right = 123.0
+offset_bottom = -68.0
+theme_override_fonts/font = ExtResource("2_i1qp1")
+theme_override_font_sizes/font_size = 32
+text = "SHAKE YOUR MOUSE FAST!!!"
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_entered" from="Area2D2" to="." method="_on_area_2d_2_mouse_entered"]

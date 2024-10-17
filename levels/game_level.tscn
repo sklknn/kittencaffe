@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://15nvo0g3wtma"]
+[gd_scene load_steps=36 format=3 uid="uid://15nvo0g3wtma"]
 
 [ext_resource type="Script" path="res://levels/game_level.gd" id="1_h84le"]
 [ext_resource type="PackedScene" uid="uid://cna6urttaj70c" path="res://characters/miniko.tscn" id="1_ij4nx"]
@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://bxjojcl0axuuh" path="res://art/GUI.png" id="18_4gpta"]
 [ext_resource type="Texture2D" uid="uid://dtnsmi67mvhik" path="res://art/Neko Cafe Asset Pack/neko-cafe-food.png" id="19_62m1c"]
 [ext_resource type="FontFile" uid="uid://dj7h3m0e82ewb" path="res://art/m5x7.ttf" id="20_q21mt"]
+[ext_resource type="Texture2D" uid="uid://d2fsglolh440p" path="res://art/plate.png" id="22_dtww2"]
+[ext_resource type="Script" path="res://levels/plate.gd" id="23_i7leh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5mwyd"]
 texture = ExtResource("2_d6owc")
@@ -557,6 +559,10 @@ texture = ExtResource("19_62m1c")
 sources/0 = SubResource("TileSetAtlasSource_5rlhl")
 sources/1 = SubResource("TileSetAtlasSource_meoch")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e7d11"]
+radius = 25.0436
+height = 94.6089
+
 [node name="GameLevel" type="Node2D"]
 script = ExtResource("1_h84le")
 
@@ -714,3 +720,16 @@ theme_override_fonts/font = ExtResource("20_q21mt")
 theme_override_font_sizes/font_size = 16
 text = "0"
 horizontal_alignment = 2
+
+[node name="Plate" type="Sprite2D" parent="."]
+position = Vector2(281, 44)
+scale = Vector2(0.359374, 0.359374)
+texture = ExtResource("22_dtww2")
+script = ExtResource("23_i7leh")
+
+[node name="InteractionArea" parent="Plate" instance=ExtResource("6_vsiqh")]
+action_name = "make a cake!"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plate/InteractionArea"]
+position = Vector2(0, 36.174)
+shape = SubResource("CapsuleShape2D_e7d11")
