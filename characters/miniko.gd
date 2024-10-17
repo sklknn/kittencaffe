@@ -7,6 +7,13 @@ extends CharacterBody2D
 @onready var animation_tree = $AnimationTree
 @onready var state_macine = animation_tree.get("parameters/playback")
 
+var item_cokocake = 0
+var item_coffe = 0
+var item_shit = 0
+var item_berrycake = 0
+var item_quasant = 0
+var item_toast = 0
+
 func _ready() -> void:
 	update_animation_parameters(Vector2(starting_direction,0))
 

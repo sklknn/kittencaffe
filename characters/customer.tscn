@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dsi1y0lwmq1ma"]
+[gd_scene load_steps=15 format=3 uid="uid://dsi1y0lwmq1ma"]
 
 [ext_resource type="Script" path="res://customer.gd" id="1_c0ykx"]
 [ext_resource type="Texture2D" uid="uid://dfrajr8pj4sr3" path="res://art/Neko Cafe Asset Pack/Characters/cat-black-side.png" id="2_t80a0"]
 [ext_resource type="Texture2D" uid="uid://b34b5poipdebw" path="res://art/thinkCloud.png" id="3_rsija"]
 [ext_resource type="Texture2D" uid="uid://dtnsmi67mvhik" path="res://art/Neko Cafe Asset Pack/neko-cafe-food.png" id="4_7w8y0"]
+[ext_resource type="PackedScene" uid="uid://o13wdchjiu7e" path="res://interactions/interaction area/interaction_area.tscn" id="5_a4450"]
 
 [sub_resource type="Animation" id="Animation_e3pk0"]
 length = 0.001
@@ -114,6 +115,9 @@ _data = {
 "idle": SubResource("Animation_un8ly")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_lo0vo"]
+radius = 25.0
+
 [node name="Customer" type="CharacterBody2D"]
 z_index = -1
 script = ExtResource("1_c0ykx")
@@ -153,5 +157,11 @@ offset = Vector2(0, -27)
 hframes = 3
 vframes = 2
 frame = 5
+
+[node name="InteractionArea" parent="." instance=ExtResource("5_a4450")]
+action_name = "give oreder"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_lo0vo")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

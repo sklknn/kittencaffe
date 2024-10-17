@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+@onready var interaction_area: InteractionArea = $InteractionArea
+@onready var player = get_tree().get_first_node_in_group("player")
+
 #black_cat_textures
 var black_back = preload("res://art/Neko Cafe Asset Pack/Characters/cat-black-back.png")
 var black_front = preload("res://art/Neko Cafe Asset Pack/Characters/cat-black-front.png")
@@ -24,6 +27,8 @@ var movement_cooldown = move_cooldown + move_time
 @export var speed = 10
 var direction = Vector2(0,0)
 
+var wanted_food
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	cat_type = randi_range(black,waiter)
@@ -31,6 +36,8 @@ func _ready() -> void:
 	$Thinking.visible = false
 	$Timer.start(randf_range(3,8))
 	$Thinking/Food.frame = randi_range(0,5)
+	wanted_food = $Thinking/Food.frame
+	interaction_area.interact = Callable(self, "_on_interact")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -114,3 +121,31 @@ func cat_anim():
 func _on_timer_timeout() -> void:
 	$Thinking.visible = true
 	$Thinking/AnimationPlayer.play("idle")
+
+func _on_interact():
+	if $Thinking.visible:
+		match wanted_food:
+			0:
+				if player.item_cokocake > 0:
+					player.item_cokocake -= 1
+					self.queue_free()
+			1:
+				if player.item_coffe > 0:
+					player.item_coffe -= 1
+					self.queue_free()
+			2:
+				if player.item_shit > 0:
+					player.item_shit -= 1
+					self.queue_free()
+			3:
+				if player.item_berrycake  > 0:
+					player.item_berrycake  -= 1
+					self.queue_free()
+			4:
+				if player.item_quasant  > 0:
+					player.item_quasant  -= 1
+					self.queue_free()
+			5:
+				if player.item_toast  > 0:
+					player.item_toast  -= 1
+					self.queue_free()
